@@ -1,0 +1,69 @@
+<div class=" bg-white border-bottom shadow-sm">
+<div class ="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="guest-form-card card">
+
+            <div class="card-header text-center">
+                <h1>Register Here</h1>
+            </div>
+
+            <div class="card-body">
+                <form [formGroup]="registrationForm" (ngSubmit)="registration()">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input  id="name" class="form-control"
+                        [ngClass]="{'is-invalid': registrationForm.get('name').touched && registrationForm.get('name').invalid }" 
+                        formControlName="name"/> 
+                        <span class="invalid-feedback">Name can't be black.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control"
+                        [ngClass]="{'is-invalid': registrationForm.get('email').touched && registrationForm.get('email').invalid }" 
+                        formControlName="email"/>
+                        <span class="invalid-feedback">Email can't be black.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input id="username" class="form-control" 
+                        [ngClass]="{'is-invalid': registrationForm.get('username').touched && registrationForm.get('username').invalid }" 
+                        formControlName="username"/>
+                        <span class="invalid-feedback">User can't be black.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobileno">Mobile No</label>
+                        <input id="mobileno" class="form-control" 
+                        [ngClass]="{'is-invalid': registrationForm.get('mobileno').touched && registrationForm.get('mobileno').invalid }" 
+                        formControlName="mobileno" />
+                        <span class="invalid-feedback">MObile No can't be black.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control"
+                        [ngClass]="{'is-invalid': registrationForm.get('password').touched && registrationForm.get('password').invalid }" 
+                        formControlName="password"/>
+                        <span class="invalid-feedback">Password can't be black.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Confirmpassword">Confirm Password</label>
+                        <input type="password" id="Confirmpassword" class="form-control"
+                         formControlName="Confirmpassword"/>
+                        <span class="invalid-feedback">Your Password must match. </span>
+                    </div>
+
+                    <button class="btn btn-primary btn-block">Registration</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>
+    <a [routerLink]="['/login']">Login</a>
+</p>
+</div>
